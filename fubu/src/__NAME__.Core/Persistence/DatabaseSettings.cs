@@ -4,7 +4,7 @@ using FubuCore;
 using FubuCore.Binding;
 using FubuMVC.Core;
 
-namespace Kokugen.Core.Persistence
+namespace __NAME__.Core.Persistence
 {
     public interface IConfigurationProperties
     {

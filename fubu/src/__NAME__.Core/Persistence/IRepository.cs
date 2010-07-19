@@ -1,49 +1,45 @@
 #region Using Directives
 
 using System;
-using System.Collections;
+
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using FluentNHibernate.Utils;
-using Kokugen.Core.Domain;
+using __NAME__.Core.Domain;
 using NHibernate;
 using NHibernate.Connection;
 using NHibernate.Criterion;
 using NHibernate.Engine;
 using NHibernate.Linq;
-using NHibernate.Mapping;
-using NHibernate.Type;
-using System.Linq.Expressions;
+
 
 #endregion
 
-namespace Kokugen.Core.Persistence
+namespace __NAME__.Core.Persistence
 {
 
-    public interface IRepository<ENTITY> where ENTITY : Domain.Entity
+    public interface IRepository<T> where T : Entity
     {
-        void Save(ENTITY entity);
+        void Save(T entity);
 
-        void SaveAndFlush(ENTITY entity);
+        T Load(Guid id);
 
-        ENTITY Load(Guid id);
+        T Get(Guid id);
 
-        ENTITY Get(Guid id);
+        T FindBy<U>(System.Linq.Expressions.Expression<Func<T, U>> expression, U search);
 
-        ENTITY FindBy<U>(Expression<Func<ENTITY, U>> expression, U search);
+        IQueryable<T> Query();
 
-        IQueryable<ENTITY> Query();
+        IQueryable<T> Query(IDomainQuery<T> whereQuery);
 
-        IQueryable<ENTITY> Query(IDomainQuery<ENTITY> whereQuery);
-
-        void Delete(ENTITY entity);
+        void Delete(T entity);
 
         void DeleteAll();
 
-        IEnumerable<ENTITY> FindAll(params ICriterion[] criteria);
+        IEnumerable<T> FindAll(params ICriterion[] criteria);
 
-        //PagedList<ENTITY> PagedQuery<ENTITY>(int start, int numItems) where ENTITY : Entity;
+   
 
         /// <summary>
         /// Execute the specified stored procedure with the given parameters and then converts
@@ -57,35 +53,18 @@ namespace Kokugen.Core.Persistence
         IEnumerable<T2> ExecuteStoredProcedure<T2>(Converter<SafeDataReader, T2> converter, string sp_name,
                                                    params Parameter[] parameters);
 
-        IEnumerable<T2> ExecuteStoredProcedure2<T2>(Converter<IDataReader, T2> converter, string sp_name,
-                                                    params Parameter[] parameters);
 
-        IQuery CreateQuery(string hqlQuery);
         ISQLQuery CreateSQLQuery(string sqlQuery);
 
-        void Evict(ENTITY entity);
+        void Evict(T entity);
     }
 
     public class Parameter
     {
-        private readonly IType type;
-
         public Parameter(string name, object value)
         {
             Name = name;
             Value = value;
-        }
-
-        public Parameter(string name, object value, IType type)
-        {
-            Name = name;
-            Value = value;
-            this.type = type;
-        }
-
-        public IType Type
-        {
-            get { return type; }
         }
 
         public string Name { get; set; }
@@ -93,84 +72,76 @@ namespace Kokugen.Core.Persistence
         public object Value { get; set; }
     }
 
-    public class NHibernateRepository<ENTITY>
-        where ENTITY : Domain.Entity
+    public class NHibernateRepository<T> : IRepository<T> where T : Entity
     {
         private readonly ISession _session;
+  
 
         public NHibernateRepository(ISession session)
         {
             _session = session;
+           
         }
 
         #region IRepository Members
 
-        public virtual void Save(ENTITY entity)
+        public void Save(T entity)
         {
-            //if (entity.Id.IsEmpty())
-            //    entity.Created = DateTime.Now;
-            //entity.LastUpdated = DateTime.Now;
-
-           _session.SaveOrUpdate(entity);
+            _session.SaveOrUpdate(entity);
+   
         }
 
-        public virtual void SaveAndFlush(ENTITY entity)
+        public T Load(Guid id)
         {
-           Save(entity);
-            _session.Flush();
+            return _session.Load<T>(id);
         }
 
-        public ENTITY Load(Guid id)
+        public T Get(Guid id)
         {
-            return _session.Load<ENTITY>(id);
+            return _session.Get<T>(id);
         }
 
-        public ENTITY Get(Guid id)
+        public IQueryable<T> Query()
         {
-            return _session.Get<ENTITY>(id);
+            return _session.Linq<T>();
         }
 
-        public IQueryable<ENTITY> Query()
+        public IQueryable<T> Query(IDomainQuery<T> whereQuery)
         {
-            return _session.Linq<ENTITY>();
+            return _session.Linq<T>().Where(whereQuery.Expression);
         }
 
-        public IQueryable<ENTITY> Query(IDomainQuery<ENTITY> whereQuery)
+        public void Delete(T entity)
         {
-            return _session.Linq<ENTITY>().Where(whereQuery.Expression);
-        }
+            _session.Delete(entity);
 
-        public virtual void Delete(ENTITY entity)
-        {
-           _session.Delete(entity);
         }
 
         public void DeleteAll()
         {
-            var query = String.Format("from {0}", typeof (ENTITY).Name);
-           _session.Delete(query);
+            var query = String.Format("from {0}", typeof(T).Name);
+            _session.Delete(query);
         }
 
-        public IEnumerable<ENTITY> FindAll(params ICriterion[] criteria)
+        public IEnumerable<T> FindAll(params ICriterion[] criteria)
         {
-            var crit =_session.CreateCriteria(typeof (ENTITY));
+            var crit = _session.CreateCriteria(typeof(T));
             foreach (var criterion in criteria)
             {
                 if (criterion == null) continue;
                 crit.Add(criterion);
             }
-            return crit.Future<ENTITY>();
+            return crit.Future<T>();
         }
 
-        public ENTITY FindBy<TU>(Expression<Func<ENTITY, TU>> expression, TU search) 
+        public T FindBy<TU>(System.Linq.Expressions.Expression<Func<T, TU>> expression, TU search)
         {
             string propertyName = ReflectionHelper.GetAccessor(expression).FieldName;
             ICriteria criteria =
-                _session.CreateCriteria(typeof(ENTITY)).Add(
+                _session.CreateCriteria(typeof(T)).Add(
                     Restrictions.Eq(propertyName, search));
-            return criteria.UniqueResult() as ENTITY;
+            return criteria.UniqueResult() as T;
         }
-        
 
         /// <summary>
         /// Execute the specified stored procedure with the given parameters and then converts
@@ -212,43 +183,7 @@ namespace Kokugen.Core.Persistence
             }
         }
 
-        public IEnumerable<T2> ExecuteStoredProcedure2<T2>(Converter<IDataReader, T2> converter, string sp_name,
-                                                           params Parameter[] parameters)
-        {
-            IConnectionProvider connectionProvider = ((ISessionFactoryImplementor)_session.SessionFactory).ConnectionProvider;
-            IDbConnection connection = connectionProvider.GetConnection();
-
-            try
-            {
-                using (IDbCommand command = connection.CreateCommand())
-                {
-                    command.CommandText = sp_name;
-                    command.CommandType = CommandType.StoredProcedure;
-
-                    CreateDbDataParameters(command, parameters);
-                    var reader = command.ExecuteReader();
-                    var results = new List<T2>();
-
-                    while (reader.Read())
-                        results.Add(converter(reader));
-
-                    reader.Close();
-
-                    return results;
-                }
-            }
-            finally
-            {
-                connectionProvider.CloseConnection(connection);
-            }
-        }
-
-        
-
-        public IQuery CreateQuery(string hqlQuery)
-        {
-            return _session.CreateQuery(hqlQuery);
-        }
+  
 
         public ISQLQuery CreateSQLQuery(string sqlQuery)
         {
@@ -268,11 +203,11 @@ namespace Kokugen.Core.Persistence
             }
         }
 
-        
 
-        public void Evict(ENTITY entity)
+
+        public void Evict(T entity)
         {
-           _session.Evict(entity);
+            _session.Evict(entity);
         }
     }
 }

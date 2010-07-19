@@ -1,7 +1,7 @@
 using System;
 using System.Data;
 
-namespace Kokugen.Core.Persistence
+namespace __NAME__.Core.Persistence
 {
     /// <summary>
     /// This is a DataReader that 'fixes' any null values before

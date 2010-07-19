@@ -1,7 +1,7 @@
 using System;
 using StructureMap;
 
-namespace Kokugen.Core.Persistence
+namespace __NAME__.Core.Persistence
 {
     public class TransactionProcessor
     {

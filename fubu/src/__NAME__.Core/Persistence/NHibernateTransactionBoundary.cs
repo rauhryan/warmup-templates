@@ -2,7 +2,7 @@ using System;
 using FluentNHibernate;
 using NHibernate;
 
-namespace Kokugen.Core.Persistence
+namespace __NAME__.Core.Persistence
 {
     public class NHibernateTransactionBoundary : ITransactionBoundary
     {

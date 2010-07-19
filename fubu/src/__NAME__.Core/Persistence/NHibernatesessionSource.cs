@@ -6,16 +6,16 @@ using NHibernate;
 using NHibernate.Cfg;
 using NHibernate.Dialect;
 
-namespace Kokugen.Core.Persistence
+namespace __NAME__.Core.Persistence
 {
-    public class NHibernatesessionSource : ISessionSource
+    public class NHibernateSessionSource : ISessionSource
     {
         private readonly IConfigurationProperties _configurationProperties;
         private readonly object _factorySyncRoot = new object();
         private Configuration _configuration;
         private ISessionFactory _sessionFactory;
 
-        public NHibernatesessionSource(IConfigurationProperties configurationProperties)
+        public NHibernateSessionSource(IConfigurationProperties configurationProperties)
         {
             _configurationProperties = configurationProperties;
             if(_sessionFactory != null) return;

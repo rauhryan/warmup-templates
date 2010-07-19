@@ -1,6 +1,6 @@
 using System;
 
-namespace Kokugen.Core.Persistence
+namespace __NAME__.Core.Persistence
 {
     public interface ITransactionBoundary : IDisposable
     {

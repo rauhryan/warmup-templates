@@ -3,16 +3,16 @@ using System.Collections.Generic;
 using FluentNHibernate;
 using FluentNHibernate.Automapping;
 using FluentNHibernate.Conventions;
-using Kokugen.Core.Domain;
-using Kokugen.Core.Persistence.Conventions;
+using __NAME__.Core.Domain;
+using __NAME__.Core.Persistence.Conventions;
+using NHibernate.SqlCommand;
 
-namespace Kokugen.Core.Persistence
+namespace __NAME__.Core.Persistence
 {
     public class AutoPersistenceModelGenerator : IAutoPersistenceModelGenerator
     {
         public AutoPersistenceModel Generate()
         {
-            setupComponentTypes();
             var mappings = new AutoPersistenceModel();
 
             mappings = AutoMap.AssemblyOf<Domain.Entity>();
@@ -28,10 +28,6 @@ namespace Kokugen.Core.Persistence
             return mappings;
         }
 
-        private void setupComponentTypes()
-        {
-            componentTypes.Add<Address>();
-        }
 
         private Action<AutoMappingExpressions> GetSetup()
         {
@@ -79,7 +75,7 @@ namespace Kokugen.Core.Persistence
         {
             if(arg.IsSubclassOf(typeof(Domain.Entity)))
             {
-                if(arg == typeof (SiteConfiguration) || arg == typeof (Alias))
+                if(arg == typeof (Alias))
                     return false;
 
                 return true;
