@@ -1,6 +1,0 @@
-<Modules>
-  <Module PersistentId="AD412E60-4C05-404C-BFAA-C8CEAE93151E" ModuleId="__NAME__.Web" />
-  <Module PersistentId="8286B56B-C115-4637-9B7E-FB799007E4F3" ModuleId="__NAME__.Core" />
-  <Module PersistentId="77694E32-19DA-4C8C-9C68-C638185C0674" ModuleId="__NAME__.Tests" />
-  <Module PersistentId="6FBEBB6E-D711-430D-A9B5-92DB213303E7" ModuleId="__NAME__.MSpec.Tests" />
-</Modules>
