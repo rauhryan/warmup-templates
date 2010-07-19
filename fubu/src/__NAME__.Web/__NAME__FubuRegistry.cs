@@ -15,7 +15,9 @@ namespace __NAME__.Web
             this.UseDefaultHtmlConventions();
 
             //Setup Actions
-
+            Actions
+              .IncludeTypesNamed(x => x.EndsWith("Action"));
+         
             //Setup Routes
 
 
