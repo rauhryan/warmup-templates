@@ -1,0 +1,11 @@
+[Bb]in/
+[Oo]bj/
+_ReSharper.*/
+*.suo
+*resharper.user
+*.sln.cache
+AssemblyInfo.cs
+*.user
+CommonAssemblyInfo.cs
+App_Data
+
