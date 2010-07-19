@@ -8,15 +8,68 @@
   </SettingsComponent>
   <RecentFiles>
     <RecentFiles>
-      <File id="AD412E60-4C05-404C-BFAA-C8CEAE93151E/f:Web.config" caret="1104" fromTop="3" />
+      <File id="8286B56B-C115-4637-9B7E-FB799007E4F3/d:Validation/f:IValidator.cs" caret="0" fromTop="0" />
+      <File id="8286B56B-C115-4637-9B7E-FB799007E4F3/d:Persistence/f:AutoPersistenceModelGenerator.cs" caret="2566" fromTop="66" />
+      <File id="8286B56B-C115-4637-9B7E-FB799007E4F3/d:Persistence/d:Conventions/f:CustomForeignKeyConvention.cs" caret="435" fromTop="16" />
+      <File id="8286B56B-C115-4637-9B7E-FB799007E4F3/d:Persistence/d:Conventions/f:CustomHasManyConvention.cs" caret="0" fromTop="0" />
+      <File id="8286B56B-C115-4637-9B7E-FB799007E4F3/d:Persistence/d:Conventions/f:CustomJoinedSubclassConvention.cs" caret="0" fromTop="0" />
+      <File id="8286B56B-C115-4637-9B7E-FB799007E4F3/d:Persistence/d:Conventions/f:CustomManyToManyTableNameConvention.cs" caret="0" fromTop="0" />
+      <File id="8286B56B-C115-4637-9B7E-FB799007E4F3/d:Persistence/d:Conventions/f:CustomReferencesConvention.cs" caret="0" fromTop="0" />
+      <File id="8286B56B-C115-4637-9B7E-FB799007E4F3/d:Persistence/d:Conventions/f:DefaultStringLengthConvention.cs" caret="0" fromTop="0" />
+      <File id="8286B56B-C115-4637-9B7E-FB799007E4F3/d:Persistence/d:Conventions/f:HasManyConvention.cs" caret="0" fromTop="0" />
+      <File id="8286B56B-C115-4637-9B7E-FB799007E4F3/d:Persistence/d:Conventions/f:MaximumStingLengthConvention.cs" caret="0" fromTop="0" />
+      <File id="8286B56B-C115-4637-9B7E-FB799007E4F3/d:Persistence/d:Conventions/f:PrimaryKeyConvention.cs" caret="0" fromTop="0" />
+      <File id="8286B56B-C115-4637-9B7E-FB799007E4F3/d:Persistence/d:Conventions/f:RequiredAttributeConvention.cs" caret="0" fromTop="0" />
+      <File id="8286B56B-C115-4637-9B7E-FB799007E4F3/d:Persistence/d:Conventions/f:TableNameConvention.cs" caret="357" fromTop="8" />
+      <File id="8286B56B-C115-4637-9B7E-FB799007E4F3/d:Domain/f:IDomainQuery.cs" caret="275" fromTop="13" />
+      <File id="8286B56B-C115-4637-9B7E-FB799007E4F3/d:Persistence/f:IRepository.cs" caret="6004" fromTop="15" />
+      <File id="8286B56B-C115-4637-9B7E-FB799007E4F3/d:Persistence/f:NHibernatesessionSource.cs" caret="979" fromTop="25" />
+      <File id="8286B56B-C115-4637-9B7E-FB799007E4F3/f:__NAME__CoreRegistry.cs" caret="557" fromTop="14" />
+      <File id="8286B56B-C115-4637-9B7E-FB799007E4F3/d:Domain/f:Entity.cs" caret="3647" fromTop="14" />
+      <File id="AD412E60-4C05-404C-BFAA-C8CEAE93151E/f:__NAME__FubuRegistry.cs" caret="449" fromTop="17" />
+      <File id="AD412E60-4C05-404C-BFAA-C8CEAE93151E/f:__NAME__StructureMapApplication.cs" caret="1208" fromTop="30" />
+      <File id="8286B56B-C115-4637-9B7E-FB799007E4F3/d:Util/f:Inflector.cs" caret="7831" fromTop="232" />
+      <File id="8286B56B-C115-4637-9B7E-FB799007E4F3/f:IStartable.cs" caret="99" fromTop="5" />
+      <File id="AD412E60-4C05-404C-BFAA-C8CEAE93151E/f:__NAME__WebRegistry.cs" caret="641" fromTop="24" />
+      <File id="8286B56B-C115-4637-9B7E-FB799007E4F3/d:Util/f:TypeExtensions.cs" caret="924" fromTop="22" />
+      <File id="AD412E60-4C05-404C-BFAA-C8CEAE93151E/d:Behaviors/f:TransactionalContainerBehavior.cs" caret="819" fromTop="29" />
+      <File id="AD412E60-4C05-404C-BFAA-C8CEAE93151E/f:__NAME__StructureMapBootstrapper.cs" caret="280" fromTop="11" />
+      <File id="AD412E60-4C05-404C-BFAA-C8CEAE93151E/f:Web.config" caret="1104" fromTop="21" />
+      <File id="77694E32-19DA-4C8C-9C68-C638185C0674/d:SchemaCreation/f:DBSetupFixture.cs" caret="128" fromTop="4" />
+      <File id="77694E32-19DA-4C8C-9C68-C638185C0674/d:SchemaCreation/f:SchemaRegistry.cs" caret="34" fromTop="0" />
+      <File id="77694E32-19DA-4C8C-9C68-C638185C0674/f:App.config" caret="1977" fromTop="25" />
     </RecentFiles>
     <RecentEdits>
-      <File id="AD412E60-4C05-404C-BFAA-C8CEAE93151E/f:Web.config" caret="3202" fromTop="21" />
-      <File id="AD412E60-4C05-404C-BFAA-C8CEAE93151E/f:Web.config" caret="1619" fromTop="21" />
-      <File id="AD412E60-4C05-404C-BFAA-C8CEAE93151E/f:Web.config" caret="886" fromTop="14" />
-      <File id="AD412E60-4C05-404C-BFAA-C8CEAE93151E/f:Web.config" caret="1867" fromTop="24" />
-      <File id="AD412E60-4C05-404C-BFAA-C8CEAE93151E/f:Web.config" caret="2819" fromTop="31" />
-      <File id="AD412E60-4C05-404C-BFAA-C8CEAE93151E/f:Web.config" caret="491" fromTop="1" />
+      <File id="AD412E60-4C05-404C-BFAA-C8CEAE93151E/f:__NAME__StructureMapBootstrapper.cs" caret="1594" fromTop="9" />
+      <File id="AD412E60-4C05-404C-BFAA-C8CEAE93151E/f:__NAME__StructureMapBootstrapper.cs" caret="1594" fromTop="35" />
+      <File id="AD412E60-4C05-404C-BFAA-C8CEAE93151E/f:__NAME__StructureMapBootstrapper.cs" caret="1594" fromTop="15" />
+      <File id="AD412E60-4C05-404C-BFAA-C8CEAE93151E/f:__NAME__StructureMapApplication.cs" caret="1084" fromTop="27" />
+      <File id="AD412E60-4C05-404C-BFAA-C8CEAE93151E/f:__NAME__FubuRegistry.cs" caret="136" fromTop="1" />
+      <File id="AD412E60-4C05-404C-BFAA-C8CEAE93151E/f:__NAME__FubuRegistry.cs" caret="1035" fromTop="32" />
+      <File id="AD412E60-4C05-404C-BFAA-C8CEAE93151E/f:__NAME__FubuRegistry.cs" caret="1388" fromTop="41" />
+      <File id="AD412E60-4C05-404C-BFAA-C8CEAE93151E/f:__NAME__FubuRegistry.cs" caret="453" fromTop="22" />
+      <File id="AD412E60-4C05-404C-BFAA-C8CEAE93151E/f:__NAME__FubuRegistry.cs" caret="388" fromTop="10" />
+      <File id="AD412E60-4C05-404C-BFAA-C8CEAE93151E/f:__NAME__FubuRegistry.cs" caret="449" fromTop="14" />
+      <File id="AD412E60-4C05-404C-BFAA-C8CEAE93151E/f:__NAME__StructureMapBootstrapper.cs" caret="1605" fromTop="40" />
+      <File id="AD412E60-4C05-404C-BFAA-C8CEAE93151E/f:__NAME__WebRegistry.cs" caret="618" fromTop="19" />
+      <File id="8286B56B-C115-4637-9B7E-FB799007E4F3/f:IStartable.cs" caret="89" fromTop="3" />
+      <File id="AD412E60-4C05-404C-BFAA-C8CEAE93151E/f:__NAME__WebRegistry.cs" caret="379" fromTop="14" />
+      <File id="8286B56B-C115-4637-9B7E-FB799007E4F3/d:Util/f:Inflector.cs" caret="7831" fromTop="232" />
+      <File id="8286B56B-C115-4637-9B7E-FB799007E4F3/d:Util/f:TypeExtensions.cs" caret="2400" fromTop="37" />
+      <File id="8286B56B-C115-4637-9B7E-FB799007E4F3/d:Util/f:TypeExtensions.cs" caret="2176" fromTop="72" />
+      <File id="8286B56B-C115-4637-9B7E-FB799007E4F3/d:Util/f:TypeExtensions.cs" caret="728" fromTop="18" />
+      <File id="AD412E60-4C05-404C-BFAA-C8CEAE93151E/f:__NAME__StructureMapBootstrapper.cs" caret="1560" fromTop="37" />
+      <File id="AD412E60-4C05-404C-BFAA-C8CEAE93151E/d:Behaviors/f:TransactionalContainerBehavior.cs" caret="1065" fromTop="42" />
+      <File id="AD412E60-4C05-404C-BFAA-C8CEAE93151E/d:Behaviors/f:TransactionalContainerBehavior.cs" caret="973" fromTop="39" />
+      <File id="AD412E60-4C05-404C-BFAA-C8CEAE93151E/d:Behaviors/f:TransactionalContainerBehavior.cs" caret="720" fromTop="20" />
+      <File id="AD412E60-4C05-404C-BFAA-C8CEAE93151E/f:__NAME__StructureMapBootstrapper.cs" caret="1508" fromTop="38" />
+      <File id="77694E32-19DA-4C8C-9C68-C638185C0674/f:App.config" caret="1026" fromTop="13" />
+      <File id="77694E32-19DA-4C8C-9C68-C638185C0674/f:App.config" caret="1771" fromTop="21" />
+      <File id="77694E32-19DA-4C8C-9C68-C638185C0674/f:App.config" caret="1977" fromTop="13" />
+      <File id="77694E32-19DA-4C8C-9C68-C638185C0674/d:SchemaCreation/f:DBSetupFixture.cs" caret="15" fromTop="0" />
+      <File id="77694E32-19DA-4C8C-9C68-C638185C0674/d:SchemaCreation/f:DBSetupFixture.cs" caret="2342" fromTop="16" />
+      <File id="77694E32-19DA-4C8C-9C68-C638185C0674/d:SchemaCreation/f:SchemaRegistry.cs" caret="34" fromTop="0" />
+      <File id="77694E32-19DA-4C8C-9C68-C638185C0674/d:SchemaCreation/f:DBSetupFixture.cs" caret="128" fromTop="4" />
     </RecentEdits>
   </RecentFiles>
   <NAntValidationSettings>
@@ -30,4 +83,16 @@
     </NUnitInstallDir>
     <UseAddins>Never</UseAddins>
   </UnitTestRunnerNUnit>
+  <CompletionStatisticsManager>
+    <ItemStatistics item="Default">
+      <Item value="IRepository" priority="0" />
+      <Item value="ENTITY`0" priority="0" />
+      <Item value="this" priority="0" />
+      <Item value="__NAME__FubuRegistry`0" priority="0" />
+      <Item value="void" priority="0" />
+    </ItemStatistics>
+    <ItemStatistics item="Qualified:__NAME__.Web.__NAME__FubuRegistry">
+      <Item value="UseDefaultHtmlConventions`0" priority="0" />
+    </ItemStatistics>
+  </CompletionStatisticsManager>
 </Configuration>
