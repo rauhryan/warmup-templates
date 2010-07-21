@@ -137,7 +137,7 @@ end
 desc "Resets the database"
 task :dbReset => [:compileSln, :dbDrop, :dbCreate] do
 
-  runner = NUnitRunner.new :compilemode => COMPILE_TARGET, :source => 'src', :platform => 'x86', :options => '/include:DBSchema'
+   runner = NUnitRunner.new :compilemode => COMPILE_TARGET, :source => 'src', :platform => 'x86', :options => '/include:DBSchema /framework=4.0.30319'
   runner.executeTests ['__NAME__.Tests']
 	
 end

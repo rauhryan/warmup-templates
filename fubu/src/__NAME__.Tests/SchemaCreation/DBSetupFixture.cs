@@ -74,12 +74,17 @@ namespace FieldBook.Tests.SchemaCreation
         private static void CreateOrUpdateSchema(Configuration config)
         {
             string value = string.Empty;
-            using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["FieldBookData"].ConnectionString))
+            using (var con = new SqlConnection(ConfigurationManager.ConnectionStrings["__NAME__Data"].ConnectionString))
             {
                 con.Open();
                 var cmd = con.CreateCommand();
 
              cmd.CommandType = CommandType.Text;
+			  cmd.CommandText = @"IF EXISTS (SELECT 1 FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE='BASE TABLE') " +
+                                 "select 'True'; " +
+                                 "ELSE " +
+                                  "select 'False' ";
+
 
                 var reader = cmd.ExecuteReader();
 
