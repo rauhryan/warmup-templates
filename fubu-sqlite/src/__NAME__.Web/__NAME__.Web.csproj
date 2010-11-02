@@ -32,6 +32,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+   <Reference Include="FluentNHibernate, Version=1.0.0.0, Culture=neutral, PublicKeyToken=8aa435e3cb308880, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Fluent NHibernate\FluentNHibernate.dll</HintPath>
+    </Reference>
+	    <Reference Include="System.Data.SQLite">
+      <HintPath>..\..\lib\sqlite\System.Data.SQLite.dll</HintPath>
+    </Reference>
     <Reference Include="FubuCore">
       <HintPath>..\..\lib\FubuMVC\FubuCore.dll</HintPath>
     </Reference>
