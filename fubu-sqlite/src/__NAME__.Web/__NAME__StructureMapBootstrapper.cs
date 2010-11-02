@@ -1,4 +1,5 @@
 using System.Web.Routing;
+using FluentNHibernate;
 using __NAME__.Core;
 using __NAME__.Core.Util;
 using __NAME__.Web.Behaviors;
