@@ -91,7 +91,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs" />
+     <Compile Include="..\CommonAssemblyInfo.cs">
+      <Link>CommonAssemblyInfo.cs</Link>
+    </Compile>
     <Compile Include="SchemaCreation\DBSetupFixture.cs" />
     <Compile Include="SchemaCreation\SchemaRegistry.cs" />
   </ItemGroup>
