@@ -40,7 +40,7 @@ namespace __NAME__.Web
                                            };
             fubuBootstrapper.Bootstrap(_routes);
 
-
+            ObjectFactory.Container.GetInstance<ISessionSource>().BuildSchema();
 
             ObjectFactory.Container.StartStartables();
             
